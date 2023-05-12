@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3wtw2cfkkan3"]
+
+[ext_resource type="Texture2D" uid="uid://7i2q0bb3skm4" path="res://background.jpg" id="1_mfo1d"]
+[ext_resource type="Script" path="res://menu.gd" id="1_y4dw3"]
+[ext_resource type="Script" path="res://play_btn.gd" id="2_ict8b"]
+
+[sub_resource type="Theme" id="Theme_gxata"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_y4dw3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("1_mfo1d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 643.0
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 0.223529, 0, 1)
+layout_mode = 0
+offset_left = 432.0
+offset_top = 227.0
+offset_right = 705.0
+offset_bottom = 330.0
+theme = SubResource("Theme_gxata")
+theme_override_font_sizes/font_size = 60
+text = "play"
+script = ExtResource("2_ict8b")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 1151.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 100
+text = "    Antigone - the game"
