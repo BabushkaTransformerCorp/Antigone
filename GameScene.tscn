@@ -1,8 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv7cfi3ugcbsd"]
+[gd_scene load_steps=14 format=3 uid="uid://bv7cfi3ugcbsd"]
 
 [ext_resource type="Texture2D" uid="uid://cesr8qtuy1u8i" path="res://Objects/maze.png" id="1_nunlf"]
 [ext_resource type="ArrayMesh" uid="uid://duygo4dil8p13" path="res://Objects/maze.obj" id="2_td6pw"]
 [ext_resource type="Script" path="res://Player.gd" id="3_y074w"]
+[ext_resource type="Script" path="res://collider.gd" id="4_lcl8u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvmj2"]
+size = Vector3(1.12236, 1.65024, 2.02085)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2lo6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,6 +35,23 @@ points = PackedVector3Array(-0.5, -0.5, 0, -0.497651, -0.5, -0.0490407, -0.49246
 
 [node name="Node3D" type="Node3D"]
 
+[node name="collider" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.4445, 0.237139, -0.744543)
+script = ExtResource("4_lcl8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844978, -1.82641, -4.59989)
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.796265, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="static_cube" type="StaticBody3D" parent="collider"]
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider/static_cube"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.768887, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bueox")
 
@@ -51,7 +72,7 @@ physics_material_override = SubResource("PhysicsMaterial_ohkic")
 shape = SubResource("ConcavePolygonShape3D_l6wdg")
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(-0.00509165, 0, -0.249948, 0, 0.25, 0, 0.249948, 0, -0.00509165, -3.72866, 0.00733685, 0.276735)
+transform = Transform3D(0.1, 0, 1.74846e-08, 0, 0.1, 0, -1.74846e-08, 0, 0.1, -4.3989, 0.0806539, -0.0534272)
 script = ExtResource("3_y074w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
@@ -66,5 +87,84 @@ shape = SubResource("ConvexPolygonShape3D_6jvf7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103907, 1.78643, 0.222989)
 
 [node name="Camera3D" type="Camera3D" parent="player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388245, -0.00851643, -0.320011)
+transform = Transform3D(10, 0, 3.41061e-13, 0, 10, 0, -3.41061e-13, 0, 10, -0.388245, -0.00851631, -0.320011)
 fov = 36.5163
+
+[node name="collider2" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.4445, 0.237139, 3.20863)
+script = ExtResource("4_lcl8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844978, -1.82641, -4.59989)
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.796265, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="static_cube" type="StaticBody3D" parent="collider2"]
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider2/static_cube"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.768887, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="collider3" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.4445, 0.237139, -3.28182)
+script = ExtResource("4_lcl8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844978, -1.82641, -4.59989)
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.796265, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="static_cube" type="StaticBody3D" parent="collider3"]
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider3/static_cube"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.768887, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="collider4" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.44355, 0.237139, -0.744543)
+script = ExtResource("4_lcl8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844978, -1.82641, -4.59989)
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider4"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.796265, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="static_cube" type="StaticBody3D" parent="collider4"]
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider4/static_cube"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.768887, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="collider5" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.87891, 0.237139, 1.77319)
+script = ExtResource("4_lcl8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844978, -1.82641, -4.59989)
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider5"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.796265, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[node name="static_cube" type="StaticBody3D" parent="collider5"]
+
+[node name="collision_shape" type="CollisionShape3D" parent="collider5/static_cube"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.768887, 0.237, -0.726)
+shape = SubResource("BoxShape3D_gvmj2")
+
+[connection signal="body_entered" from="collider" to="collider" method="_on_body_entered"]
+[connection signal="body_exited" from="collider" to="collider" method="_on_body_exited"]
+[connection signal="body_entered" from="collider2" to="collider2" method="_on_body_entered"]
+[connection signal="body_exited" from="collider2" to="collider2" method="_on_body_exited"]
+[connection signal="body_entered" from="collider3" to="collider3" method="_on_body_entered"]
+[connection signal="body_exited" from="collider3" to="collider3" method="_on_body_exited"]
+[connection signal="body_entered" from="collider4" to="collider4" method="_on_body_entered"]
+[connection signal="body_exited" from="collider4" to="collider4" method="_on_body_exited"]
+[connection signal="body_entered" from="collider5" to="collider5" method="_on_body_entered"]
+[connection signal="body_exited" from="collider5" to="collider5" method="_on_body_exited"]
