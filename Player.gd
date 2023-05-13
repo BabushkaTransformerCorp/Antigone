@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	print("player: ", global_position)
-	var input_dir = Input.get_vector("back", "forward", "left", "right")
+	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
