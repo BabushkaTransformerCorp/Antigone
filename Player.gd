@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 1
+const SPEED = 3
 const JUMP_VELOCITY = 4.5
 
 
@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	print("player: ", global_position)
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
+	var input_dir = Input.get_vector("back", "forward", "left", "right")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
