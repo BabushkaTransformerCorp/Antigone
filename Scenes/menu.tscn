@@ -37,3 +37,6 @@ offset_right = 1151.0
 offset_bottom = 147.0
 theme_override_font_sizes/font_size = 100
 text = "    Antigone - the game"
+editable = false
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
