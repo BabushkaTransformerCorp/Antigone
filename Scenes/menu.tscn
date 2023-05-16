@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c43dixwf2l30w"]
+[gd_scene load_steps=5 format=3 uid="uid://txxf6tgbnlxu"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_j6jqx"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_y8avx"]
 [ext_resource type="Texture2D" uid="uid://7i2q0bb3skm4" path="res://Resources/background.jpg" id="2_d3s7d"]
-[ext_resource type="Script" path="res://play_btn.gd" id="3_x4lbk"]
+[ext_resource type="Script" path="res://Scripts/play_btn.gd" id="3_vsqku"]
 
 [sub_resource type="Theme" id="Theme_gxata"]
 
 [node name="menu" type="Node2D"]
-script = ExtResource("1_j6jqx")
+script = ExtResource("1_y8avx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1151.0
@@ -30,7 +30,7 @@ offset_bottom = 330.0
 theme = SubResource("Theme_gxata")
 theme_override_font_sizes/font_size = 60
 text = "play"
-script = ExtResource("3_x4lbk")
+script = ExtResource("3_vsqku")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 offset_right = 1151.0

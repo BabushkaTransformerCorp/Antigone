@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://donae0rpq13v5"]
+[gd_scene load_steps=12 format=3]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_eh1xk"]
-[ext_resource type="Script" path="res://collider.gd" id="2_tvl0c"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_eh1xk"]
+[ext_resource type="Script" path="res://Scripts/collider.gd" id="2_tvl0c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3wsp0"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
