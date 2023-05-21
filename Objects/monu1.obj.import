@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbr77w180hxyr"
+path="res://.godot/imported/monu1.obj-97c9813effad655bd7711fad1c1774ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/monu1.obj-97c9813effad655bd7711fad1c1774ae.mesh"]
+
+source_file="res://Objects/monu1.obj"
+dest_files=["res://.godot/imported/monu1.obj-97c9813effad655bd7711fad1c1774ae.mesh", "res://.godot/imported/monu1.obj-97c9813effad655bd7711fad1c1774ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
